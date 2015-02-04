@@ -3,4 +3,8 @@ CSS Animation Project explaining the CSS Box Model for a graduation project for 
 
 Inspiration came from the Good Man animation project by Pedro Ivo Hudson (http://thegoodman.cc/).
 
-## Licence
+## Software Used
+
+- Coda 2.5 - http://www.panic.com/coda/
+- CodeKit - http://incident57.com/codekit/
+
