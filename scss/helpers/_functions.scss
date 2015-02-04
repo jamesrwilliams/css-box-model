@@ -1,0 +1,48 @@
+/* 
+ * Functions SCSS Partial File
+ *
+ * @package: CSS-Box-Model
+ * @version: 1
+ * @author: @James_RWilliams
+ *
+ */
+ 
+ 
+ 
+	/*
+	 * Animation Mixin Function
+	 * 
+	 * Takes the arguments and renders a cross-browser 
+	 * compatible code block for the animation.
+	 *
+	 * Formal syntax can be found here: https://developer.mozilla.org/en/docs/Web/CSS/animation
+	 *
+	 */
+
+	@mixin render_animation($name, $duration, $timing_function, $delay, $iteration_count, $direction ){
+				
+		-webkit-animation: $name $duration $timing_function $delay $iteration_count $direction;
+		   -moz-animation: $name $duration $timing_function $delay $iteration_count $direction;
+		     -o-animation: $name $duration $timing_function $delay $iteration_count $direction;
+          	    animation: $name $duration $timing_function $delay $iteration_count $direction;
+		
+	}
+	
+	/*
+	 * Keyframe Mixin Function
+	 * 
+	 * Takes the arguments and renders a cross-browser 
+	 * compatible code block for the keyframe animation css.
+	 *
+	 * Formal syntax can be found here: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
+	 *
+	 */
+	
+	@mixin render_keyframes_from_to($name, $from_name, $from_value, $too_name, $too_value){
+		 
+		@-webkit-keyframes $name { from { $from: $from_value; } to { $too_name: $too_value; }  }
+		   @-moz-keyframes $name { from { $from: $from_value; } to { $too_name: $too_value; }  }
+		     @-o-keyframes $name { from { $from: $from_value; } to { $too_name: $too_value; }  }
+        	    @keyframes $name { from { $from: $from_value; } to { $too_name: $too_value; }  }
+		
+	}

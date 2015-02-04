@@ -1,0 +1,26 @@
+/* 
+ * Globals SCSS Partial File
+ *
+ * @package: CSS-Box-Model
+ * @version: 1
+ * @author: @James_RWilliams
+ *
+ */
+ 
+* { 
+	 
+	 -moz-box-sizing: border-box;
+	 -webkit-box-sizing: border-box; 
+	 box-sizing: border-box; 
+	 
+	 -webkit-font-smoothing: antialiased;
+	 
+}
+
+body {
+	
+	background: url(/img/stardust.png);
+	font-family: "proxima-nova";
+	font-size: 6em;
+	
+}
