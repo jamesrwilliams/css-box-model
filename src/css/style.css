@@ -1,6 +1,9 @@
 /* 
  * Core SCSS Import File
  *
+ * This file manages the imports of all the scss partial files across the project 
+ * and it's layout is based from that of the SASS guidelines here: http://sass-guidelin.es/
+ *
  * @package: CSS-Box-Model
  * @version: 1
  * @author: @James_RWilliams
