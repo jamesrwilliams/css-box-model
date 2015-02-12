@@ -78,7 +78,7 @@ header {
 		height: 100%;
 		background: rgba(0,0,0,0.2);
 		
-		@include render_animation(timer,60s,linear,0s,1,single);
+		@include render_animation(timer,60s,linear,0s,1,normal);
 		
 	}
 	
