@@ -78,23 +78,20 @@ header {
 		height: 100%;
 		background: rgba(0,0,0,0.2);
 		
-		@include render_animation(timer,60s,linear,0s,1,alternate);
-			
+		@include render_animation(timer,60s,linear,0s,1,single);
+		
 	}
 	
 }
 
- @-webkit-keyframes timer { from { width: 0; } to { width: 100%; }  }
-	@-moz-keyframes timer { from { width: 0; } to { width: 100%; }  }
-	  @-o-keyframes timer { from { width: 0; } to { width: 100%; }  }
-
-@include render_keyframes_from_to(timer,width,0,width,100%); 
-
-.text {
+@include keyframes("timer"){
 	
-	background: red;
+	0% 		{	width: 0;		}
+	
+	100%	{	width: 100%; 	}
 	
 }
+
 
 header:after {
 		

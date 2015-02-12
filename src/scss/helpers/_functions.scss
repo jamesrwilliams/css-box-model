@@ -6,8 +6,8 @@
  * @author: @James_RWilliams
  *
  */
- 
- 
+
+	
 	/*
 	 * Animation Mixin Function
 	 * 
@@ -37,15 +37,23 @@
 	 *
 	 */
 	
-	@mixin render_keyframes_from_to($name_, $from_name, $from_value, $too_name, $too_value ){
-		 		 
-		@-webkit-keyframes $name_ { from { $from: $from_value; } to { $too_name: $too_value; }  }
-		//   @-moz-keyframes $name_ { from { $from: $from_value; } to { $too_name: $too_value; }  }
-		//     @-o-keyframes $name_ { from { $from: $from_value; } to { $too_name: $too_value; }  }
-	    	   
+	@mixin keyframes($animationName){
 		
+	    @-webkit-keyframes #{$animationName} {
+	        @content;
+	    }
+	    @-moz-keyframes #{$animationName} {
+	        @content;
+	    }
+	    @-o-keyframes #{$animationName} {
+	        @content;
+	    }
+	    @keyframes #{$animationName} {
+	        @content;
+	    }
 	}
-	
+
+		
 	/*
 	 * Extend Clear CSS Class
 	 * 
