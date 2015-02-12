@@ -35,6 +35,30 @@
  * Formal syntax can be found here: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
  *
  */
+/*
+ * Extend Clear CSS Class
+ * 
+ * Use the @extend .class to take this code and enter it when the 
+ * code is compiled. Ideally used with the [element]:after sudo selector
+ * It adds a hidden block element that clears the contetn. No need for 
+ * aditional code in the DOM.
+ * 
+ * More information can be found here: http://sass-lang.com/guide#topic-7
+ *
+ */
+.clear, header:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+/* 
+ * Colours SCSS Partial File
+ *
+ * @package: CSS-Box-Model
+ * @version: 1
+ * @author: @James_RWilliams
+ *
+ */
 /* 
  * Globals SCSS Partial File
  *
@@ -50,18 +74,78 @@
   -webkit-font-smoothing: antialiased; }
 
 body {
-  background: url(/img/stardust.png);
+  margin: 0;
   font-family: "proxima-nova";
-  font-size: 6em; }
+  background: #D2D6D6; }
 
-/* 
- * Colours SCSS Partial File
- *
- * @package: CSS-Box-Model
- * @version: 1
- * @author: @James_RWilliams
- *
- */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px; }
+
+header {
+  background: #34383C;
+  margin-bottom: 50px; }
+  header h1 {
+    width: 50%;
+    margin: 0;
+    float: left; }
+  header nav {
+    width: 50%;
+    float: right; }
+
+.stage {
+  min-height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #F7F8F9; }
+
+.progress_bar {
+  width: 100%;
+  height: 5px;
+  margin-bottom: 50px;
+  background: rgba(0, 0, 0, 0.2); }
+  .progress_bar span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-animation: timer 60s linear 0s 1 alternate;
+    -moz-animation: timer 60s linear 0s 1 alternate;
+    -o-animation: timer 60s linear 0s 1 alternate;
+    animation: timer 60s linear 0s 1 alternate; }
+
+@-webkit-keyframes timer {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+@-moz-keyframes timer {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+@-o-keyframes timer {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+@-webkit-keyframes $name_ {}
+.text {
+  background: red; }
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  font-size: 10px;
+  width: 100%;
+  padding: 15px;
+  color: #34383C;
+  font-weight: bold; }
+  footer a {
+    color: inherit;
+    text-decoration: none; }
+
 /* 
  * Typography SCSS Partial File
  *
@@ -71,6 +155,5 @@ body {
  *
  */
 h1 {
-  text-shadow: 0 1px 0 #333;
   text-align: center;
   color: #00b777; }
