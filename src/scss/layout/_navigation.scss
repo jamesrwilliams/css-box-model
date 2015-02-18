@@ -1,0 +1,42 @@
+header {
+	
+	background: $colour_blue;
+	
+	nav {
+		
+		ul {
+			
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			
+			li {
+				
+								
+				a {
+					
+					display: block;
+					width: 12.5%;
+					float: left;
+					text-align: center;
+					text-decoration: none;
+					
+					font-weight: bold;
+					color: rgba(0,0,0,0.6);
+					
+				}
+				
+			}
+			
+		}
+		
+		ul:after {
+			
+			content: "";
+			clear: both;
+			display: block;			
+		}
+		
+	}
+	
+}
