@@ -47,6 +47,17 @@
  *
  */
 /*
+ * Transition Mixin Function
+ * 
+ * Single Fire animation mixin. Renders a cross-browser compatible 
+ * code block with arguments.
+ *
+ * transition: <property> <duration> <timing-function> <delay>
+ *
+ * Formal syntax can be found here: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions
+ *
+ */
+/*
  * Extend Clear CSS Class
  * 
  * Use the @extend .class to take this code and enter it when the 
@@ -71,19 +82,42 @@
  *
  */
 header {
-  background: #4b6db4; }
+  position: relative;
+  height: 60px;
+  background: #00b777;
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  header .progress_nav {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 25px;
+    margin-left: 5%; }
+    header .progress_nav span {
+      display: block;
+      margin-top: 6px;
+      height: 50%;
+      width: 18.5%; }
   header nav ul {
     list-style: none;
     margin: 0;
     padding: 0; }
     header nav ul li a {
       display: block;
-      width: 12.5%;
+      width: 25px;
+      height: 25px;
+      margin: 0 5%;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12.5px;
+      line-height: 28px;
+      font-size: 0.8em;
       float: left;
       text-align: center;
       text-decoration: none;
       font-weight: bold;
-      color: rgba(0, 0, 0, 0.6); }
+      color: white; }
+    header nav ul li:nth-child(1) a {
+      color: rgba(0, 0, 0, 0.8); }
   header nav ul:after {
     content: "";
     clear: both;
@@ -118,9 +152,10 @@ body {
   background: #D2D6D6; }
 
 .container {
-  max-width: 960px;
+  height: 80%;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 10px; }
+  padding: 0 60px; }
 
 .progress_bar {
   width: 100%;
@@ -135,6 +170,39 @@ body {
     -moz-animation: timer 10s linear 0s 1 normal;
     -o-animation: timer 10s linear 0s 1 normal;
     animation: timer 10s linear 0s 1 normal; }
+
+.chapter_intro {
+  padding: 20px 0;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  .chapter_intro h1 {
+    color: #444;
+    margin-top: 0px; }
+  .chapter_intro p {
+    width: 60%;
+    color: #444;
+    line-height: 1.6em; }
+
+.start_btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #00b777;
+  color: white;
+  display: block;
+  line-height: 66px;
+  text-align: center;
+  width: 450px;
+  height: 60px;
+  margin-top: -30px;
+  margin-left: -225px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2em; }
+
+.stage {
+  height: 700px;
+  position: relative; }
 
 @-webkit-keyframes timer {
   0% {
@@ -208,13 +276,13 @@ footer {
  * Import the Icon Render scss partials.
  */
 .file {
-  position: relative;
+  position: absolute;
   height: 140px;
   width: 112px;
   background: white;
   display: inline-block;
   margin-bottom: 20px;
-  top: 10px; }
+  opacity: 0; }
 
 .file:after,
 .file:before {
@@ -264,13 +332,12 @@ span.min:before {
   content: "min.js"; }
 
 .editor {
+  overflow-x: hidden;
   position: absolute;
   z-index: 1000;
-  height: 100%;
-  max-height: 400px;
-  border-top: 15px solid #BCC2B9;
   width: 300px;
-  height: 400px;
+  height: 0;
+  max-height: 400px;
   background: white; }
   .editor .sidebar {
     position: absolute;
@@ -278,6 +345,7 @@ span.min:before {
     height: 385px;
     background: #444; }
   .editor .content {
+    border-top: 15px solid #BCC2B9;
     position: absolute;
     width: 290px;
     left: 10px;
@@ -319,6 +387,9 @@ span.min:before {
 
 .saved {
   position: absolute;
+  z-index: 1000;
+  display: block;
+  opacity: 0;
   background: #ff6e61;
   height: 50px;
   width: 80%;
@@ -336,3 +407,225 @@ span.min:before {
   height: 200px;
   width: 100px;
   display: block; }
+
+.editor {
+  top: 15%; }
+
+.file:nth-child(1) {
+  top: 28%;
+  left: 100px; }
+
+.file:nth-child(2) {
+  top: 28%;
+  left: 100px; }
+
+.file:nth-child(3) {
+  top: 28%;
+  left: 100px; }
+
+.editor {
+  -webkit-animation: editor_drop 2s linear 1s 1 normal forwards;
+  -moz-animation: editor_drop 2s linear 1s 1 normal forwards;
+  -o-animation: editor_drop 2s linear 1s 1 normal forwards;
+  animation: editor_drop 2s linear 1s 1 normal forwards; }
+
+.saved {
+  -webkit-animation: saved_enter_exit 3s linear 4s 1 normal;
+  -moz-animation: saved_enter_exit 3s linear 4s 1 normal;
+  -o-animation: saved_enter_exit 3s linear 4s 1 normal;
+  animation: saved_enter_exit 3s linear 4s 1 normal; }
+
+.file:nth-child(1) {
+  -webkit-animation: fly_out_top 1s linear 6s 1 normal forwards;
+  -moz-animation: fly_out_top 1s linear 6s 1 normal forwards;
+  -o-animation: fly_out_top 1s linear 6s 1 normal forwards;
+  animation: fly_out_top 1s linear 6s 1 normal forwards; }
+
+.file:nth-child(2) {
+  -webkit-animation: fly_out_mid 1s linear 6.1s 1 normal forwards;
+  -moz-animation: fly_out_mid 1s linear 6.1s 1 normal forwards;
+  -o-animation: fly_out_mid 1s linear 6.1s 1 normal forwards;
+  animation: fly_out_mid 1s linear 6.1s 1 normal forwards; }
+
+.file:nth-child(3) {
+  -webkit-animation: fly_out_bottom 1s linear 6.2s 1 normal forwards;
+  -moz-animation: fly_out_bottom 1s linear 6.2s 1 normal forwards;
+  -o-animation: fly_out_bottom 1s linear 6.2s 1 normal forwards;
+  animation: fly_out_bottom 1s linear 6.2s 1 normal forwards; }
+
+@-webkit-keyframes editor_drop {
+  0% {
+    height: 0; }
+  100% {
+    height: 100%; } }
+@-moz-keyframes editor_drop {
+  0% {
+    height: 0; }
+  100% {
+    height: 100%; } }
+@-o-keyframes editor_drop {
+  0% {
+    height: 0; }
+  100% {
+    height: 100%; } }
+@keyframes editor_drop {
+  0% {
+    height: 0; }
+  100% {
+    height: 100%; } }
+@-webkit-keyframes saved_enter_exit {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-moz-keyframes saved_enter_exit {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-o-keyframes saved_enter_exit {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes saved_enter_exit {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-webkit-keyframes fly_out_top {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 5%;
+    left: 450px;
+    opacity: 1; } }
+@-moz-keyframes fly_out_top {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 5%;
+    left: 450px;
+    opacity: 1; } }
+@-o-keyframes fly_out_top {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 5%;
+    left: 450px;
+    opacity: 1; } }
+@keyframes fly_out_top {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 5%;
+    left: 450px;
+    opacity: 1; } }
+@-webkit-keyframes fly_out_mid {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 37%;
+    left: 450px;
+    opacity: 1; } }
+@-moz-keyframes fly_out_mid {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 37%;
+    left: 450px;
+    opacity: 1; } }
+@-o-keyframes fly_out_mid {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 37%;
+    left: 450px;
+    opacity: 1; } }
+@keyframes fly_out_mid {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 37%;
+    left: 450px;
+    opacity: 1; } }
+@-webkit-keyframes fly_out_bottom {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 70%;
+    left: 450px;
+    opacity: 1; } }
+@-moz-keyframes fly_out_bottom {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 70%;
+    left: 450px;
+    opacity: 1; } }
+@-o-keyframes fly_out_bottom {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 70%;
+    left: 450px;
+    opacity: 1; } }
+@keyframes fly_out_bottom {
+  0% {
+    top: 28%;
+    left: 100px; }
+  1% {
+    opacity: 1; }
+  100% {
+    top: 70%;
+    left: 450px;
+    opacity: 1; } }

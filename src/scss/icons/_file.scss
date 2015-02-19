@@ -6,14 +6,13 @@ $file_fold: ($file_width / 4.5);
 
 .file {
 
-	position: relative;
+	position: absolute;
 	height: $file_height;
 	width: $file_width;
 	background: white;
 	display: inline-block;
 	margin-bottom: 20px;
-	
-	top: 10px;
+	opacity: 0;
 
 }
 

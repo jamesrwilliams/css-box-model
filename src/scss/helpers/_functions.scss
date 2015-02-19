@@ -1,11 +1,11 @@
-/* 
- * Functions SCSS Partial File
- *
- * @package: CSS-Box-Model
- * @version: 1
- * @author: @James_RWilliams
- *
- */
+	/* 
+	 * Functions SCSS Partial File
+	 *
+	 * @package: CSS-Box-Model
+	 * @version: 1
+	 * @author: @James_RWilliams
+	 *
+	 */
 
 	
 	/*
@@ -38,6 +38,15 @@
 		
 	}
 	
+	@mixin render_animation_single($name, $duration, $timing_function, $delay, $iteration_count, $direction ){
+				
+		-webkit-animation: $name $duration $timing_function $delay $iteration_count $direction forwards;
+		   -moz-animation: $name $duration $timing_function $delay $iteration_count $direction forwards;
+		     -o-animation: $name $duration $timing_function $delay $iteration_count $direction forwards;
+	      	    animation: $name $duration $timing_function $delay $iteration_count $direction forwards;
+		
+	}
+	
 	/*
 	 * Keyframe Mixin Function
 	 * 
@@ -62,6 +71,25 @@
 	    @keyframes #{$animationName} {
 	        @content;
 	    }
+	}
+	
+	/*
+	 * Transition Mixin Function
+	 * 
+	 * Single Fire animation mixin. Renders a cross-browser compatible 
+	 * code block with arguments.
+	 *
+	 * transition: <property> <duration> <timing-function> <delay>
+	 *
+	 * Formal syntax can be found here: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions
+	 *
+	 */
+	
+	@mixin transition($property, $duration, $timing_function, $delay){
+		
+		-webkit-transition: $property $duration $timing_function $delay;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+				transition: $property $duration $timing_function $delay;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+		
 	}
 
 		

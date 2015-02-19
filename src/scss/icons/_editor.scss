@@ -1,17 +1,17 @@
 .editor {
 	
-	position: absolute;
+	overflow-x: hidden;
 	
+	position: absolute;
 	z-index: 1000;
 	
-	height: 100%;
-	max-height: 400px;
-	
-	border-top: 15px solid #BCC2B9;
-	
 	width: 300px;
-	height: 400px;
+	height:0;
+	max-height: 400px;
+
 	background: white;
+	
+	
 
 	.sidebar {
 		
@@ -23,6 +23,8 @@
 	}
 	
 	.content {
+		
+		border-top: 15px solid #BCC2B9;
 		
 		position: absolute;
 		width: (300px - 10px);
@@ -79,6 +81,10 @@
 .saved {
 	
 	position: absolute;
+	z-index: 1000;
+	display: block;
+	
+	opacity: 0;
 	
 	background: $colour_red;
 	height: 50px;

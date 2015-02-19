@@ -9,16 +9,15 @@
  * @author: @James_RWilliams
  *
  */
- 
 
 
 @import "helpers/functions";
 
 @import "layout/colours";
 @import "layout/navigation";
-
 @import "layout/globals";
+@import "layout/typography";			// 
 
-@import "layout/typography";
+@import "icons/core"; 					// _core.scss - Imports all icons within itself
 
-@import "icons/_icons-core.scss";
+@import "chapters/c1_Preprocessors";	// Chapter 1 Animation File - Preprocessors
