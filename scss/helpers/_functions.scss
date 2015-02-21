@@ -1,0 +1,114 @@
+	/* 
+	 * Functions SCSS Partial File
+	 *
+	 * @package: CSS-Box-Model
+	 * @version: 1
+	 * @author: @James_RWilliams
+	 *
+	 */
+
+	
+	/*
+	 * Animation Mixin Function
+	 * 
+	 * Takes the arguments and renders a cross-browser 
+	 * compatible code block for the animation.
+	 *
+	 * Formal syntax can be found here: https://developer.mozilla.org/en/docs/Web/CSS/animation
+	 *
+	 *
+	 *
+	 * 			  $name = The name of the animation used in the Keyframes.
+	 * 		  $duration = Time in seconds using: <number>s, or milliseconds using: <number>ms
+	 * $timing_function = linear | ease | ease-in | ease-in-out | ease-out | step-start | step-end
+	 * 			 $delay = <number>s
+	 * $iteration_count = infinite | <number>
+	 * 		 $direction = normal | reverse | alternate | alternate-reverse
+	 *
+	 *
+	 *
+	 */
+	
+	@mixin render_animation($name, $duration, $timing_function, $delay, $iteration_count, $direction ){
+				
+		-webkit-animation: $name $duration $timing_function $delay $iteration_count $direction;
+		   -moz-animation: $name $duration $timing_function $delay $iteration_count $direction;
+		     -o-animation: $name $duration $timing_function $delay $iteration_count $direction;
+	      	    animation: $name $duration $timing_function $delay $iteration_count $direction;
+		
+	}
+	
+	@mixin render_animation_single($name, $duration, $timing_function, $delay, $iteration_count, $direction ){
+				
+		-webkit-animation: $name $duration $timing_function $delay $iteration_count $direction forwards;
+		   -moz-animation: $name $duration $timing_function $delay $iteration_count $direction forwards;
+		     -o-animation: $name $duration $timing_function $delay $iteration_count $direction forwards;
+	      	    animation: $name $duration $timing_function $delay $iteration_count $direction forwards;
+		
+	}
+	
+	/*
+	 * Keyframe Mixin Function
+	 * 
+	 * Takes the arguments and renders a cross-browser 
+	 * compatible code block for the keyframe animation css.
+	 *
+	 * Formal syntax can be found here: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
+	 *
+	 */
+	
+	@mixin keyframes($animationName){
+		
+	    @-webkit-keyframes #{$animationName} {
+	        @content;
+	    }
+	    @-moz-keyframes #{$animationName} {
+	        @content;
+	    }
+	    @-o-keyframes #{$animationName} {
+	        @content;
+	    }
+	    @keyframes #{$animationName} {
+	        @content;
+	    }
+	}
+	
+	/*
+	 * Transition Mixin Function
+	 * 
+	 * Single Fire animation mixin. Renders a cross-browser compatible 
+	 * code block with arguments.
+	 *
+	 * transition: <property> <duration> <timing-function> <delay>
+	 *
+	 * Formal syntax can be found here: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions
+	 *
+	 */
+	
+	@mixin transition($property, $duration, $timing_function, $delay){
+		
+		-webkit-transition: $property $duration $timing_function $delay;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+				transition: $property $duration $timing_function $delay;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+		
+	}
+
+		
+	/*
+	 * Extend Clear CSS Class
+	 * 
+	 * Use the @extend .class to take this code and enter it when the 
+	 * code is compiled. Ideally used with the [element]:after sudo selector
+	 * It adds a hidden block element that clears the contetn. No need for 
+	 * aditional code in the DOM.
+	 * 
+	 * More information can be found here: http://sass-lang.com/guide#topic-7
+	 *
+	 */		
+	
+	.clear {
+		
+		content: "";
+		display: block;
+		clear: both;
+				
+	}

@@ -1,0 +1,23 @@
+/* 
+ * Core SCSS Import File
+ *
+ * This file manages the imports of all the scss partial files across the project 
+ * and it's layout is based from that of the SASS guidelines here: http://sass-guidelin.es/
+ *
+ * @package: CSS-Box-Model
+ * @version: 1
+ * @author: @James_RWilliams
+ *
+ */
+
+
+@import "helpers/functions";
+
+@import "layout/colours";
+@import "layout/navigation";
+@import "layout/globals";
+@import "layout/typography";			// 
+
+@import "icons/core"; 					// _core.scss - Imports all icons within itself
+
+@import "chapters/c1_Preprocessors";	// Chapter 1 Animation File - Preprocessors

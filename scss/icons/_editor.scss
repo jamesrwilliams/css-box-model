@@ -1,0 +1,107 @@
+.editor {
+	
+	overflow-x: hidden;
+	
+	position: absolute;
+	z-index: 1000;
+	
+	top:50%;
+	margin-top: -165px;
+	
+	width: 300px;
+	height:330px;
+	// max-height: 330px;
+
+	background: white;
+
+	.sidebar {
+		
+		position: absolute;
+		width: 10px;
+		height: 400px;
+		background: #444;
+		
+	}
+	
+	.content {
+		
+		border-top: 15px solid #BCC2B9;
+		
+		position: absolute;
+		width: (300px - 10px);
+		left: 10px;
+		height: 385px;
+		padding: 10px;
+		
+		.codeline_100,
+		.codeline_80,
+		.codeline_60,
+		.codeline_40,
+		.codeline_20,
+		.codeline_5 {
+			
+			background: #ccc;
+			margin-bottom: 5px;
+			height: 5px;
+			display: block;
+			
+		}
+			
+		.codeline_100 {width: 100%;}
+		.codeline_80 {width: 80%;}
+		.codeline_60 {width: 60%;}
+		.codeline_40 {width: 40%;}
+		.codeline_20 {width: 20%;}
+		.codeline_5 {width: 5%;}
+		
+	}
+	
+}
+
+
+.editor:before {
+	
+	content: "";
+	display: block;
+	
+	height: 8px;
+	width: 8px;
+	
+	border-radius: 4px;
+	
+	background: rgba(0,0,0,0.2);
+	
+	position: absolute;
+	
+	top:-12px;
+	left: 3px;
+	
+	
+}
+
+.saved {
+	
+	position: absolute;
+	z-index: 1000;
+	display: block;
+	
+	opacity: 0;
+	
+	background: $colour_red;
+	height: 50px;
+	width: 80%;
+	margin: 50% 10%;
+	
+}
+
+.saved:before {
+	
+	content: "SAVED";
+	font-weight: bold;
+	line-height: 50px;
+	text-align: center;
+	color: white;
+	display: block;
+	
+	
+}
