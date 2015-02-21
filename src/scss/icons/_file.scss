@@ -11,8 +11,8 @@ $file_fold: ($file_width / 4.5);
 	width: $file_width;
 	background: white;
 	display: inline-block;
-	margin-bottom: 20px;
-	opacity: 0;
+	
+	margin-left: -($file_width /2);
 
 }
 

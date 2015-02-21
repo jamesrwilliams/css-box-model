@@ -5,7 +5,24 @@ header {
 	background: $colour_green;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 	
+	#home_btn {
+		
+		width: 30%;
+		float: left;
+		padding: 5px 0;
+		height: 40px;
+		line-height: 35px;
+		
+		text-decoration: none;
+		color: white;
+		font-weight: bold;
+		font-size: 1.3em;
+	}
+	
 	nav {
+		
+		float: right;
+		width: 70%;
 		
 		padding: 5px 0;
 		
