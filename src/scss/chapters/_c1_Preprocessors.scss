@@ -1,10 +1,12 @@
 $start_delay: 1s;
 
+.page_preprocessor .progress_bar span { @include render_animation_single(timer,8s,linear,0s,1,normal); }
+
 .editor {top:15%;	}
 
-.file:nth-child(1) {top: 28%; 	left: 100px;	}
-.file:nth-child(2) {top: 28%;	left: 100px;	}
-.file:nth-child(3) {top: 28%;	left: 100px;	}
+.file:nth-child(1) {top: 28%; 	left: 30%;	}
+.file:nth-child(2) {top: 28%;	left: 30%;	}
+.file:nth-child(3) {top: 28%;	left: 30%;	}
 
 .editor {				@include render_animation_single(
 	
@@ -79,24 +81,24 @@ $start_delay: 1s;
 
 @include keyframes("fly_out_top"){
 	
-	0%		{	top:28%; left: 100px;}
+	0%		{	top:28%; left: 30%;}
 	1%		{	opacity: 1;			}
-	100%	{ 	top:5%; left: 450px; opacity: 1;}
+	100%	{ 	top:5%; left: 50%; opacity: 1;}
 	
 }
 
 @include keyframes("fly_out_mid"){
 	
-	0%		{	top: 28%; left: 100px;}
+	0%		{	top: 28%; left: 30%;}
 	1%		{	opacity: 1;	}	
-	100%	{ 	top: 37%; left: 450px; opacity: 1;}
+	100%	{ 	top: 37%; left: 50%; opacity: 1;}
 	
 }
 
 @include keyframes("fly_out_bottom"){
 	
-	0%		{	top:28%; left: 100px;}
+	0%		{	top:28%; left: 30%;}
 	1%		{	opacity: 1;		}
-	100%	{ 	top:70%; left: 450px; opacity: 1;}
+	100%	{ 	top:70%; left: 50%; opacity: 1;}
 	
 }

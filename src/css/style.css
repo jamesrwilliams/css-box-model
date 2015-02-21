@@ -83,42 +83,31 @@
  */
 header {
   position: relative;
-  height: 60px;
+  height: 40px;
   background: #00b777;
-  padding: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-  header .progress_nav {
-    position: absolute;
-    z-index: 10;
-    width: 100%;
-    height: 25px;
-    margin-left: 5%; }
-    header .progress_nav span {
-      display: block;
-      margin-top: 6px;
-      height: 50%;
-      width: 18.5%; }
-  header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-    header nav ul li a {
-      display: block;
-      width: 25px;
-      height: 25px;
-      margin: 0 5%;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 12.5px;
-      line-height: 28px;
-      font-size: 0.8em;
-      float: left;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-      color: white; }
-    header nav ul li:nth-child(1) a {
-      color: rgba(0, 0, 0, 0.8); }
-  header nav ul:after {
+  header nav {
+    padding: 5px 0; }
+    header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      header nav ul li a {
+        height: 30px;
+        width: 30px;
+        display: block;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        font-size: 0.8em;
+        line-height: 30px;
+        float: left;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        color: white; }
+      header nav ul li:nth-child(1) a {
+        color: rgba(0, 0, 0, 0.8); }
+  header nav:after {
     content: "";
     clear: both;
     display: block; }
@@ -144,36 +133,48 @@ header {
 
 html,
 body {
-  height: 100%; }
+  height: 100%;
+  position: relative; }
 
 body {
   margin: 0;
+  position: relative;
   font-family: "proxima-nova";
   background: #D2D6D6; }
 
-.container {
-  height: 80%;
+.page_container {
   max-width: 1300px;
+  min-width: 800px; }
+
+.container {
+  max-width: 1300px;
+  min-width: 800px;
   margin: 0 auto;
   padding: 0 60px; }
 
 .progress_bar {
+  position: absolute;
   width: 100%;
-  height: 4px;
-  margin-bottom: 50px; }
+  height: 3px;
+  top: 239px; }
   .progress_bar span {
     display: block;
     width: 0;
     height: 100%;
-    background: #ff6e61;
-    -webkit-animation: timer 10s linear 0s 1 normal;
-    -moz-animation: timer 10s linear 0s 1 normal;
-    -o-animation: timer 10s linear 0s 1 normal;
-    animation: timer 10s linear 0s 1 normal; }
+    background: #4b6db4; }
+
+.stage {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: calc(100% - 240px);
+  bottom: 0; }
 
 .chapter_intro {
-  position: relative;
+  position: absolute;
+  width: 100%;
   padding: 20px 0;
+  height: 200px;
   background: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
   .chapter_intro h1 {
@@ -203,11 +204,7 @@ body {
   top: 20px; }
 
 .back_btn {
-  top: 100px; }
-
-.stage {
-  height: 700px;
-  position: relative; }
+  top: 119px; }
 
 @-webkit-keyframes timer {
   0% {
@@ -347,7 +344,7 @@ span.min:before {
   .editor .sidebar {
     position: absolute;
     width: 10px;
-    height: 385px;
+    height: 400px;
     background: #444; }
   .editor .content {
     border-top: 15px solid #BCC2B9;
@@ -413,20 +410,26 @@ span.min:before {
   width: 100px;
   display: block; }
 
+.page_preprocessor .progress_bar span {
+  -webkit-animation: timer 8s linear 0s 1 normal forwards;
+  -moz-animation: timer 8s linear 0s 1 normal forwards;
+  -o-animation: timer 8s linear 0s 1 normal forwards;
+  animation: timer 8s linear 0s 1 normal forwards; }
+
 .editor {
   top: 15%; }
 
 .file:nth-child(1) {
   top: 28%;
-  left: 100px; }
+  left: 30%; }
 
 .file:nth-child(2) {
   top: 28%;
-  left: 100px; }
+  left: 30%; }
 
 .file:nth-child(3) {
   top: 28%;
-  left: 100px; }
+  left: 30%; }
 
 .editor {
   -webkit-animation: editor_drop 2s linear 1s 1 normal forwards;
@@ -517,120 +520,120 @@ span.min:before {
 @-webkit-keyframes fly_out_top {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 5%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @-moz-keyframes fly_out_top {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 5%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @-o-keyframes fly_out_top {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 5%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @keyframes fly_out_top {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 5%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @-webkit-keyframes fly_out_mid {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 37%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @-moz-keyframes fly_out_mid {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 37%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @-o-keyframes fly_out_mid {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 37%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @keyframes fly_out_mid {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 37%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @-webkit-keyframes fly_out_bottom {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 70%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @-moz-keyframes fly_out_bottom {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 70%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @-o-keyframes fly_out_bottom {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 70%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
 @keyframes fly_out_bottom {
   0% {
     top: 28%;
-    left: 100px; }
+    left: 30%; }
   1% {
     opacity: 1; }
   100% {
     top: 70%;
-    left: 450px;
+    left: 50%;
     opacity: 1; } }
