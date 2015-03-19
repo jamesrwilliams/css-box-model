@@ -4,694 +4,142 @@
  * This file manages the imports of all the scss partial files across the project 
  * and it's layout is based from that of the SASS guidelines here: http://sass-guidelin.es/
  *
- * @package: CSS-Box-Model
- * @version: 1
- * @author: @James_RWilliams
- *
- */
-/* 
- * Functions SCSS Partial File
- *
- * @package: CSS-Box-Model
- * @version: 1
- * @author: @James_RWilliams
- *
- */
-/*
- * Animation Mixin Function
- * 
- * Takes the arguments and renders a cross-browser 
- * compatible code block for the animation.
- *
- * Formal syntax can be found here: https://developer.mozilla.org/en/docs/Web/CSS/animation
- *
- *
- *
- * 			  $name = The name of the animation used in the Keyframes.
- * 		  $duration = Time in seconds using: <number>s, or milliseconds using: <number>ms
- * $timing_function = linear | ease | ease-in | ease-in-out | ease-out | step-start | step-end
- * 			 $delay = <number>s
- * $iteration_count = infinite | <number>
- * 		 $direction = normal | reverse | alternate | alternate-reverse
- *
- *
- *
- */
-/*
- * Keyframe Mixin Function
- * 
- * Takes the arguments and renders a cross-browser 
- * compatible code block for the keyframe animation css.
- *
- * Formal syntax can be found here: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
- *
- */
-/*
- * Transition Mixin Function
- * 
- * Single Fire animation mixin. Renders a cross-browser compatible 
- * code block with arguments.
- *
- * transition: <property> <duration> <timing-function> <delay>
- *
- * Formal syntax can be found here: https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions
- *
- */
-/*
- * Extend Clear CSS Class
- * 
- * Use the @extend .class to take this code and enter it when the 
- * code is compiled. Ideally used with the [element]:after sudo selector
- * It adds a hidden block element that clears the contetn. No need for 
- * aditional code in the DOM.
- * 
- * More information can be found here: http://sass-lang.com/guide#topic-7
- *
- */
-.clear, header:after {
-  content: "";
-  display: block;
-  clear: both; }
-
-/* 
- * Colours SCSS Partial File
- *
- * @package: CSS-Box-Model
- * @version: 1
- * @author: @James_RWilliams
- *
- */
-header {
-  position: relative;
-  height: 40px;
-  background: #00b777;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-  header #home_btn {
-    width: 30%;
-    float: left;
-    padding: 5px 0;
-    height: 40px;
-    line-height: 35px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.3em; }
-  header nav {
-    float: right;
-    width: 70%;
-    padding: 5px 0; }
-    header nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0; }
-      header nav ul li a {
-        height: 30px;
-        width: 30px;
-        display: block;
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 15px;
-        font-size: 0.8em;
-        line-height: 30px;
-        float: left;
-        text-align: center;
-        text-decoration: none;
-        font-weight: bold;
-        color: white; }
-      header nav ul li:nth-child(1) a {
-        color: rgba(0, 0, 0, 0.8); }
-  header nav:after {
-    content: "";
-    clear: both;
-    display: block; }
-
-/* 
- * Globals SCSS Partial File
- *
- * @package: CSS-Box-Model
+ * @package: Intro-To-SCSS
  * @version: 1
  * @author: @James_RWilliams
  *
  */
 * {
-  	/*
-  	
-  	 -moz-user-select: none; 
-      -khtml-user-select: none; 
-      -webkit-user-select: none; 
-      -o-user-select: none; 
-      
-      */
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  font-family: sans-serif; }
+  -webkit-font-smoothing: antialiased; }
 
 html,
 body {
-  height: 100%;
-  position: relative; }
+  margin: 0;
+  padding: 0;
+  background: #05B2D2; }
 
 body {
-  margin: 0;
-  position: relative;
-  font-family: "proxima-nova";
-  background: #D2D6D6; }
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #444; }
 
-.page_container {
-  max-width: 1300px;
-  min-width: 800px; }
-
-.page_home {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #00b777; }
-  .page_home h1 {
-    font-size: 10vw;
-    text-align: center;
-    color: white; }
-  .page_home a {
+.filler {
+  position: absolute;
+  background: #2D373F;
+  z-index: 1000000;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: white; }
+  .filler h2 {
+    height: 600px;
+    font-size: 5vh; }
+  .filler a#START {
     display: block;
-    font-size: 2em;
-    background: white;
-    color: #00b777;
-    padding: 20px;
+    position: absolute;
+    width: 500px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -250px;
+    color: white;
+    padding: 20px 10px;
     text-decoration: none;
     font-weight: bold;
-    text-align: center; }
+    background: #1EBBA6; }
 
-.container {
-  max-width: 1300px;
-  min-width: 800px;
+.wrapper {
+  position: relative;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 60px; }
+  padding: 0 10px 0; }
 
-.progress_bar {
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  top: 239px; }
-  .progress_bar span {
-    display: block;
-    width: 0;
-    height: 100%;
-    background: #4b6db4; }
+.typed-cursor {
+  display: none; }
 
-.stage {
-  position: absolute;
-  width: 100%;
-  overflow: hidden;
-  height: calc(100% - 240px);
-  bottom: 0; }
+header {
+  background: #2D373F;
+  padding: 20px; }
+  header p {
+    font-weight: bold;
+    color: #EE7836;
+    display: inline-block;
+    width: 50%;
+    margin: 0; }
+  header button {
+    position: absolute;
+    right: -10px;
+    top: -10px; }
 
-.chapter_intro {
-  position: absolute;
-  width: 100%;
-  padding: 20px 0;
-  height: 200px;
-  background: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-  .chapter_intro h1 {
-    color: #444;
-    margin-top: 0px; }
-  .chapter_intro p {
-    width: 60%;
-    color: #444;
-    line-height: 1.6em; }
+.chapter {
+  padding: 20px 0px;
+  line-height: 1.3em;
+  color: white;
+  margin-bottom: 10px;
+  background: none; }
+  .chapter h3 {
+    margin: 0; }
 
-.fwd_btn,
-.back_btn {
-  position: absolute;
-  right: 60px;
+#result {
+  margin: 0;
+  padding: 0;
+  background: green;
+  color: white;
+  font-weight: bold;
+  text-align: center;
   line-height: 60px;
-  width: 250px;
-  height: 60px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1em;
-  background: #00b777;
-  color: white;
-  display: block;
-  text-align: center; }
-
-.fwd_btn {
-  top: 20px; }
-
-.back_btn {
-  top: 119px; }
-
-.size_label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80px;
-  height: 20px;
-  background: #0193a3;
-  text-align: center;
-  line-height: 20px;
-  font-family: monospace;
-  color: white;
-  font-weight: bold;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px; }
-
-@-webkit-keyframes timer {
-  0% {
-    width: 0; }
-  100% {
-    width: 100%; } }
-@-moz-keyframes timer {
-  0% {
-    width: 0; }
-  100% {
-    width: 100%; } }
-@-o-keyframes timer {
-  0% {
-    width: 0; }
-  100% {
-    width: 100%; } }
-@keyframes timer {
-  0% {
-    width: 0; }
-  100% {
-    width: 100%; } }
-footer {
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  font-size: 10px;
-  width: 100%;
-  padding: 15px;
-  color: #34383C;
-  font-weight: bold; }
-  footer a {
-    color: inherit;
-    text-decoration: none; }
-
-/* 
- * Typography SCSS Partial File
- *
- * @package: CSS-Box-Model
- * @version: 1
- * @author: @James_RWilliams
- *
- */
-/*
-.file:nth-child(1){ @include render_animation(mover,2s,linear,5s,infinite,alternate); }
-.file:nth-child(2){ @include render_animation(mover,2s,linear,5.1s,infinite,alternate);}
-.file:nth-child(3){ @include render_animation(mover,2s,linear,5.2s,infinite,alternate);}
-.file:nth-child(4){ @include render_animation(mover,2s,linear,5.3s,infinite,alternate);}
-.file:nth-child(5){ @include render_animation(mover,2s,linear,5.4s,infinite,alternate);}
-*/
-@-webkit-keyframes mover {
-  0% {
-    top: 10px; }
-  100% {
-    top: 400px; } }
-@-moz-keyframes mover {
-  0% {
-    top: 10px; }
-  100% {
-    top: 400px; } }
-@-o-keyframes mover {
-  0% {
-    top: 10px; }
-  100% {
-    top: 400px; } }
-@keyframes mover {
-  0% {
-    top: 10px; }
-  100% {
-    top: 400px; } }
-/*
- * Import the Icon Render scss partials.
- */
-.file {
-  position: absolute;
-  height: 140px;
-  width: 112px;
-  background: white;
-  display: inline-block;
-  margin-left: -56px; }
-
-.file:after,
-.file:before {
-  position: absolute;
-  content: "";
-  display: block;
+  display: none;
   width: 0;
-  height: 0;
-  border-style: solid; }
-
-.file:after {
-  bottom: 0;
-  right: 0;
-  border-width: 24.8888888889px 24.8888888889px 0 0;
-  border-color: #999 transparent transparent transparent; }
-
-.file:before {
-  bottom: 0;
-  right: 0;
-  border-width: 0 0 24.8888888889px 24.8888888889px;
-  border-color: transparent transparent #D2D6D6 transparent; }
-
-.file span {
-  display: block;
-  text-align: center;
-  font-family: monospace;
-  height: 140px;
-  line-height: 140px;
-  width: 112px;
-  font-size: 90%;
-  color: #888;
-  white-space: pre-wrap; }
-
-span.scss:before {
-  content: ".scss"; }
-
-span.scss_partial:before {
-  content: "_partial"; }
-
-span.css:before {
-  content: ".css"; }
-
-span.js:before {
-  content: ".js"; }
-
-span.min:before {
-  content: "min.js"; }
-
-.editor {
-  overflow-x: hidden;
-  position: absolute;
-  z-index: 1000;
-  top: 50%;
-  margin-top: -165px;
-  width: 300px;
-  height: 330px;
-  background: white; }
-  .editor .sidebar {
-    position: absolute;
-    width: 10px;
-    height: 400px;
-    background: #444; }
-  .editor .content {
-    border-top: 15px solid #BCC2B9;
-    position: absolute;
-    width: 290px;
-    left: 10px;
-    height: 385px;
-    padding: 10px; }
-    .editor .content .codeline_100,
-    .editor .content .codeline_80,
-    .editor .content .codeline_60,
-    .editor .content .codeline_40,
-    .editor .content .codeline_20,
-    .editor .content .codeline_5 {
-      background: #ccc;
-      margin-bottom: 5px;
-      height: 5px;
-      display: block; }
-    .editor .content .codeline_100 {
-      width: 100%; }
-    .editor .content .codeline_80 {
-      width: 80%; }
-    .editor .content .codeline_60 {
-      width: 60%; }
-    .editor .content .codeline_40 {
-      width: 40%; }
-    .editor .content .codeline_20 {
-      width: 20%; }
-    .editor .content .codeline_5 {
-      width: 5%; }
-
-.editor:before {
-  content: "";
-  display: block;
-  height: 8px;
-  width: 8px;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.2);
-  position: absolute;
-  top: -12px;
-  left: 3px; }
-
-.saved {
-  position: absolute;
-  z-index: 1000;
-  display: block;
-  opacity: 0;
-  background: #ff6e61;
-  height: 50px;
-  width: 80%;
-  margin: 50% 10%; }
-
-.saved:before {
-  content: "SAVED";
-  font-weight: bold;
-  line-height: 50px;
-  text-align: center;
-  color: white;
-  display: block; }
-
-.processor {
-  height: 200px;
-  width: 100px;
-  display: block; }
-
-/*
- *
- * Set Inital Object States before animations
- *
- */
-.file {
-  opacity: 0; }
-
-.editor {
   height: 0; }
 
-.page_preprocessor .progress_bar span {
-  -webkit-animation: timer 8s linear 0s 1 normal forwards;
-  -moz-animation: timer 8s linear 0s 1 normal forwards;
-  -o-animation: timer 8s linear 0s 1 normal forwards;
-  animation: timer 8s linear 0s 1 normal forwards; }
+.col-wrapper {
+  height: 100%; }
+  .col-wrapper .col {
+    height: 100%;
+    padding: 20px 0;
+    width: 49%; }
+  .col-wrapper .col:nth-child(1) {
+    float: left; }
+  .col-wrapper .col:nth-child(2) {
+    float: right;
+    padding: 20px 0; }
+    .col-wrapper .col:nth-child(2) article {
+      padding: 20px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+      background: #eaedf1; }
 
-.file:nth-child(1) {
-  top: 28%;
-  left: 30%; }
+.col-wrapper:after {
+  content: "";
+  display: block;
+  clear: both; }
 
-.file:nth-child(2) {
-  top: 28%;
-  left: 30%; }
+button {
+  background: #EE7836;
+  border: 0;
+  font-size: 1em;
+  color: #2D373F;
+  font-weight: bold;
+  padding: 10px 15px; }
 
-.file:nth-child(3) {
-  top: 28%;
-  left: 30%; }
+#help {
+  color: #2D373F; }
 
-.editor {
-  -webkit-animation: editor_drop 2s linear 1s 1 normal forwards;
-  -moz-animation: editor_drop 2s linear 1s 1 normal forwards;
-  -o-animation: editor_drop 2s linear 1s 1 normal forwards;
-  animation: editor_drop 2s linear 1s 1 normal forwards; }
+.CodeMirror {
+  font-family: "Consolas";
+  padding: 20px; }
 
-.saved {
-  -webkit-animation: saved_enter_exit 3s linear 4s 1 normal;
-  -moz-animation: saved_enter_exit 3s linear 4s 1 normal;
-  -o-animation: saved_enter_exit 3s linear 4s 1 normal;
-  animation: saved_enter_exit 3s linear 4s 1 normal; }
+.CodeMirror-gutter {
+  text-align: center;
+  background: #2D373F; }
 
-.file:nth-child(1) {
-  -webkit-animation: fly_out_top 1s linear 6s 1 normal forwards;
-  -moz-animation: fly_out_top 1s linear 6s 1 normal forwards;
-  -o-animation: fly_out_top 1s linear 6s 1 normal forwards;
-  animation: fly_out_top 1s linear 6s 1 normal forwards; }
+@media screen and (max-width: 1000px) {
+  .chapter_nav {
+    width: 30%; }
 
-.file:nth-child(2) {
-  -webkit-animation: fly_out_mid 1s linear 6.1s 1 normal forwards;
-  -moz-animation: fly_out_mid 1s linear 6.1s 1 normal forwards;
-  -o-animation: fly_out_mid 1s linear 6.1s 1 normal forwards;
-  animation: fly_out_mid 1s linear 6.1s 1 normal forwards; }
-
-.file:nth-child(3) {
-  -webkit-animation: fly_out_bottom 1s linear 6.2s 1 normal forwards;
-  -moz-animation: fly_out_bottom 1s linear 6.2s 1 normal forwards;
-  -o-animation: fly_out_bottom 1s linear 6.2s 1 normal forwards;
-  animation: fly_out_bottom 1s linear 6.2s 1 normal forwards; }
-
-@-webkit-keyframes editor_drop {
-  0% {
-    height: 0; }
-  100% {
-    height: 330px; } }
-@-moz-keyframes editor_drop {
-  0% {
-    height: 0; }
-  100% {
-    height: 330px; } }
-@-o-keyframes editor_drop {
-  0% {
-    height: 0; }
-  100% {
-    height: 330px; } }
-@keyframes editor_drop {
-  0% {
-    height: 0; }
-  100% {
-    height: 330px; } }
-@-webkit-keyframes saved_enter_exit {
-  0% {
-    opacity: 0; }
-  20% {
-    opacity: 1; }
-  80% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-@-moz-keyframes saved_enter_exit {
-  0% {
-    opacity: 0; }
-  20% {
-    opacity: 1; }
-  80% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-@-o-keyframes saved_enter_exit {
-  0% {
-    opacity: 0; }
-  20% {
-    opacity: 1; }
-  80% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-@keyframes saved_enter_exit {
-  0% {
-    opacity: 0; }
-  20% {
-    opacity: 1; }
-  80% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-@-webkit-keyframes fly_out_top {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 5%;
-    left: 40%;
-    opacity: 1; } }
-@-moz-keyframes fly_out_top {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 5%;
-    left: 40%;
-    opacity: 1; } }
-@-o-keyframes fly_out_top {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 5%;
-    left: 40%;
-    opacity: 1; } }
-@keyframes fly_out_top {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 5%;
-    left: 40%;
-    opacity: 1; } }
-@-webkit-keyframes fly_out_mid {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 37%;
-    left: 40%;
-    opacity: 1; } }
-@-moz-keyframes fly_out_mid {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 37%;
-    left: 40%;
-    opacity: 1; } }
-@-o-keyframes fly_out_mid {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 37%;
-    left: 40%;
-    opacity: 1; } }
-@keyframes fly_out_mid {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 37%;
-    left: 40%;
-    opacity: 1; } }
-@-webkit-keyframes fly_out_bottom {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 70%;
-    left: 40%;
-    opacity: 1; } }
-@-moz-keyframes fly_out_bottom {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 70%;
-    left: 40%;
-    opacity: 1; } }
-@-o-keyframes fly_out_bottom {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 70%;
-    left: 40%;
-    opacity: 1; } }
-@keyframes fly_out_bottom {
-  0% {
-    top: 28%;
-    left: 30%; }
-  1% {
-    opacity: 1; }
-  100% {
-    top: 70%;
-    left: 40%;
-    opacity: 1; } }
+  .col-wrapper .col {
+    float: none;
+    width: 100%; } }
