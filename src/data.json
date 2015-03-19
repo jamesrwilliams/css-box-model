@@ -1,0 +1,175 @@
+{
+	"meta":{
+		
+		"title":"Intro Into SCSS v0.1",
+		"autor":"James R. Williams"
+		
+	},
+	
+	"chapters":{
+		
+		"0":{
+			
+			"title":"What is a preprocessor",
+			"desc":"A preprocessor is a program that takes one type of data and converts it to another type of data. In the case of HTML and CSS, some of the more popular preprocessor languages include Haml and Sass . Haml is processed into HTML and Sass is processed into CSS.",
+			"question":"h1 {\n\n \tcolor:red;\n\n}",
+			"tips":{
+				
+				"0":"I haven’t slept for ten days, because that would be too long.",
+				"1":"A burrito is a sleeping bag for ground beef.",
+				"2":"An escalator can never break — it can only become stairs."
+				
+			},
+			"answers":{
+				
+				"0":"color:blue",
+				"1":"color: blue",
+				"2":"color: #00F;",
+				"3":"color: #0000FF"
+				
+			}
+		},
+		
+		"1":{
+			
+			"title":"Variables",
+			"desc":"Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass uses the $ symbol to make something a variable",
+			"question":"$colour_Red: #FF0000;",
+			"tips":{
+				
+				"0":"I haven’t slept for ten days, because that would be too long.",
+				"1":"A burrito is a sleeping bag for ground beef.",
+				"2":"An escalator can never break — it can only become stairs."
+				
+			},
+			"answers":{
+				
+				"0":"h1 * { color:blue }",
+				"1":"h1 * { color: blue }",
+				"2":"color: #00F;",
+				"3":"color: #0000FF"
+				
+			}
+
+			
+		},
+		"2":{
+			
+			"title":"Nesting",
+			"desc":"A preprocessor is a program that takes one type of data and converts it to another type of data. In the case of HTML and CSS, some of the more popular preprocessor languages include Haml and Sass . Haml is processed into HTML and Sass is processed into CSS.",
+			"question":"h1 {\n\n \tcolor:red;\n\n}",
+			"tips":{
+				
+				"0":"I haven’t slept for ten days, because that would be too long.",
+				"1":"A burrito is a sleeping bag for ground beef.",
+				"2":"An escalator can never break — it can only become stairs."
+				
+			},
+			"answers":{
+				
+				"0":"h1 * { color:blue }",
+				"1":"h1 * { color: blue }",
+				"2":"color: #00F;",
+				"3":"color: #0000FF"
+				
+			}
+
+			
+		},
+		"3":{
+			
+			"title":"Partials",
+			"desc":"A preprocessor is a program that takes one type of data and converts it to another type of data. In the case of HTML and CSS, some of the more popular preprocessor languages include Haml and Sass . Haml is processed into HTML and Sass is processed into CSS.",
+			"question":"h1 {\n\n \tcolor:red;\n\n}",
+			"tips":{
+				
+				"0":"I haven’t slept for ten days, because that would be too long.",
+				"1":"A burrito is a sleeping bag for ground beef.",
+				"2":"An escalator can never break — it can only become stairs."
+				
+			},
+			"answers":{
+				
+				"0":"h1 * { color:blue }",
+				"1":"h1 * { color: blue }",
+				"2":"color: #00F;",
+				"3":"color: #0000FF"
+				
+			}
+
+			
+		},
+		"4":{
+			
+			"title":"Imports",
+			"desc":"A preprocessor is a program that takes one type of data and converts it to another type of data. In the case of HTML and CSS, some of the more popular preprocessor languages include Haml and Sass . Haml is processed into HTML and Sass is processed into CSS.",
+			"question":"h1 {\n\n \tcolor:red;\n\n}",
+			"tips":{
+				
+				"0":"I haven’t slept for ten days, because that would be too long.",
+				"1":"A burrito is a sleeping bag for ground beef.",
+				"2":"An escalator can never break — it can only become stairs."
+				
+			},
+			"answers":{
+				
+				"0":"h1 * { color:blue }",
+				"1":"h1 * { color: blue }",
+				"2":"color: #00F;",
+				"3":"color: #0000FF"
+				
+			}
+
+			
+		},
+		"5":{
+			
+			"title":"Mixins",
+			"desc":"A preprocessor is a program that takes one type of data and converts it to another type of data. In the case of HTML and CSS, some of the more popular preprocessor languages include Haml and Sass . Haml is processed into HTML and Sass is processed into CSS.",
+			"question":"h1 {\n\n \tcolor:red;\n\n}",
+			"tips":{
+				
+				"0":"I haven’t slept for ten days, because that would be too long.",
+				"1":"A burrito is a sleeping bag for ground beef.",
+				"2":"An escalator can never break — it can only become stairs."
+				
+			},
+			"answers":{
+				
+				"0":"h1 * { color:blue }",
+				"1":"h1 * { color: blue }",
+				"2":"color: #00F;",
+				"3":"color: #0000FF"
+				
+			}
+
+			
+		},
+		"6":{
+			
+			"title":"Extend & Inheritance",
+			"desc":"A preprocessor is a program that takes one type of data and converts it to another type of data. In the case of HTML and CSS, some of the more popular preprocessor languages include Haml and Sass . Haml is processed into HTML and Sass is processed into CSS.",
+			"question":"h1 {\n\n \tcolor:red;\n\n}",
+			"tips":{
+				
+				"0":"I haven’t slept for ten days, because that would be too long.",
+				"1":"A burrito is a sleeping bag for ground beef.",
+				"2":"An escalator can never break — it can only become stairs."
+				
+			},
+			"answers":{
+				
+				"0":"h1 * { color:blue }",
+				"1":"h1 * { color: blue }",
+				"2":"color: #00F;",
+				"3":"color: #0000FF"
+				
+			}
+
+			
+		}
+		
+	}
+	
+	
+}

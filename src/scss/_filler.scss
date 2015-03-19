@@ -1,0 +1,44 @@
+.filler {
+	
+	position: absolute;
+	background: $colour_Background;
+	
+	z-index: 1000000;
+	
+	height: 100%;
+	width: 100%;
+	
+	text-align: center;
+	color: white;
+	
+	h2 {
+		
+		height: 600px;
+		font-size: 5vh;
+		
+	}
+	
+	a#START {
+		
+		display: block;
+		
+		position: absolute;
+		
+		width: 500px;
+		height: 60px;
+		
+		top:50%;
+		left: 50%;
+		
+		margin-top: -25px;
+		margin-left: -250px;
+		
+		color: white;
+		padding: 20px 10px;
+		text-decoration: none;
+		font-weight: bold;
+		background: $colour_Green;
+			
+	}
+	
+}
