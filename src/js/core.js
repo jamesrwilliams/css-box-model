@@ -52,7 +52,7 @@ function draw(){
 	
 	editor.setValue(data.chapters[chapter_number].question);
 	$("#chapter_content").text(data.chapters[chapter_number].desc);
-	$(".chapter h3").text(data.chapters[chapter_number].title);
+	$(".chapter h1").text(data.chapters[chapter_number].title);
 	$(".CodeMirror").animate({"opacity":"1"},500);
 	
 	
@@ -185,8 +185,6 @@ function get_system_data(){
 
 function init(){
 	
-	
-	console.warn("Hello");
 	$('.page_1 .inner h1').toggle().addClass('animated bounceInDown');
 	$(".page_1 .inner a.btn").toggle().addClass('animated bounceInUp');
 	
@@ -197,21 +195,7 @@ function init(){
  *	Init CodeMirror and Fetch App Data json
  * 
  */	
- 
 
-function change_page(page){
-	
-	switch(page){
-	
-		case "home":
-		
-			console.log("Home fired");
-		
-		break  	
-		
-	} 
-	
-}
 
 $(document).ready(function(){
 	
