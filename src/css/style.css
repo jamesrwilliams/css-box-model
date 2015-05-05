@@ -19,12 +19,25 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #05B2D2; }
+  background: #00c2d4; }
 
 body {
-  font-family: sans-serif;
-  font-size: 16px;
+  font-family: "source-sans-pro", sans-serif;
+  font-size: 18px;
   color: #444; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+a:visited {
+  font-weight: normal; }
+
+a:hover {
+  text-decoration: underline; }
+
+a:hover {
+  text-decoration: underline; }
 
 .filler {
   position: absolute;
@@ -52,14 +65,73 @@ body {
     font-weight: bold;
     background: #1EBBA6; }
 
-.wrapper {
+video {
+  max-width: 100%; }
+
+nav {
+  position: absolute;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: #333333; }
+  nav h1 {
+    text-align: center; }
+
+#menu_release {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 10px 0; }
+  padding: 10px;
+  display: none;
+  color: white;
+  font-weight: bold;
+  text-align: center; }
+  #menu_release img#icon {
+    position: absolute;
+    left: 10px;
+    bottom: 6px;
+    margin-right: 20px; }
+
+nav ol {
+  display: block;
+  padding: 20px;
+  margin: 0;
+  padding: 0; }
+  nav ol li {
+    color: white;
+    list-style: none; }
+    nav ol li a {
+      color: inherit;
+      padding: 10px;
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    nav ol li a:hover {
+      text-decoration: none; }
+    nav ol li ol {
+      list-style: none;
+      margin: 0;
+      padding: 0 5px; }
+
+.inner {
+  padding: 20px; }
 
 .typed-cursor {
   display: none; }
+
+.wrapper {
+  position: absolute;
+  left: 350px;
+  max-width: 860px; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "bebas-neue",sans-serif; }
+
+h1 {
+  margin: 0;
+  color: white; }
 
 header {
   background: #2D373F;
@@ -73,16 +145,42 @@ header {
   header button {
     position: absolute;
     right: -10px;
-    top: -10px; }
+    top: -10px;
+    color: white; }
 
 .chapter {
-  padding: 20px 0px;
+  margin-top: 5vh;
   line-height: 1.3em;
-  color: white;
-  margin-bottom: 10px;
-  background: none; }
+  color: white; }
   .chapter h3 {
+    font-size: 5vh;
     margin: 0; }
+  .chapter p {
+    margin: 3vh 0;
+    font-weight: 600; }
+
+.inner h1 {
+  font-size: 5vh;
+  letter-spacing: 5px; }
+
+.page_1 .inner h1,
+.page_1 .inner a.btn {
+  display: none; }
+
+.inner h1 {
+  margin-top: 15vh;
+  font-size: 12vh; }
+.inner p {
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 50px; }
+
+.page_1 {
+  padding-top: 10vh; }
+  .page_1 .inner {
+    max-width: 860px;
+    margin: 0 auto; }
 
 #result {
   margin: 0;
@@ -92,44 +190,44 @@ header {
   font-weight: bold;
   text-align: center;
   line-height: 60px;
+  z-index: 10000000;
   display: none;
   width: 0;
   height: 0; }
 
-.col-wrapper {
-  height: 100%; }
-  .col-wrapper .col {
-    height: 100%;
-    padding: 20px 0;
-    width: 49%; }
-  .col-wrapper .col:nth-child(1) {
-    float: left; }
-  .col-wrapper .col:nth-child(2) {
-    float: right;
-    padding: 20px 0; }
-    .col-wrapper .col:nth-child(2) article {
-      padding: 20px;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-      background: #eaedf1; }
+.btn {
+  border: 10px solid white;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 3em;
+  padding: 0px 50px;
+  text-decoration: none !important;
+  -webkit-transition: all 0.5s ease; }
+  .btn a {
+    text-decoration: none; }
 
-.col-wrapper:after {
-  content: "";
-  display: block;
-  clear: both; }
+.btn:hover {
+  border-color: #2D373F;
+  color: #2D373F; }
 
 button {
-  background: #EE7836;
+  background: #56C4C3;
   border: 0;
   font-size: 1em;
-  color: #2D373F;
+  color: white;
   font-weight: bold;
+  margin-top: 10px;
   padding: 10px 15px; }
 
 #help {
   color: #2D373F; }
 
+span.code,
+.codeMirror {
+  font-family: "source-code-pro", "Consolas", monospace; }
+
 .CodeMirror {
-  font-family: "Consolas";
   padding: 20px; }
 
 .CodeMirror-gutter {
@@ -137,9 +235,21 @@ button {
   background: #2D373F; }
 
 @media screen and (max-width: 1000px) {
-  .chapter_nav {
-    width: 30%; }
+  .wrapper,
+  nav {
+    left: 0;
+    resize: 0;
+    position: relative;
+    width: 100%;
+    height: auto; }
 
-  .col-wrapper .col {
-    float: none;
-    width: 100%; } }
+  #menu_release {
+    display: block; }
+
+  nav ol {
+    display: none; } }
+@media screen and (max-width: 600px) {
+  .page_1 {
+    padding-top: 0; }
+    .page_1 .inner h1 {
+      margin-top: 0; } }

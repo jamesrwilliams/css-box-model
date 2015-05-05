@@ -9,9 +9,87 @@
  *
  */
 
-var data, editor, passed;
+var data, editor, passed, CodeMirror, answer, console;
 
 var chapter_number = 0;
+var attempts = 0;
+
+try {
+   Typekit.load({
+     loading: function() {
+       // Javascript to execute when fonts start loading
+     },
+     active: function() {
+       // Javascript to execute when fonts become active
+       
+       init();
+       
+     },
+     inactive: function() {
+       // Javascript to execute when fonts become inactive
+     }
+   })
+ } catch(e) {}
+
+function hide_result(){
+	
+	$("#result").animate({"height":"0px"}, function(){
+		
+		$("#result").css("display","none");
+		
+	});
+	
+}
+
+/**
+ *	
+ * 
+ */		
+
+function draw(){
+	
+	hide_result();
+	
+	editor.setValue(data.chapters[chapter_number].question);
+	$("#chapter_content").text(data.chapters[chapter_number].desc);
+	$(".chapter h3").text(data.chapters[chapter_number].title);
+	$(".CodeMirror").animate({"opacity":"1"},500);
+	
+	
+}
+
+/**
+ *	
+ * 
+ */		
+
+function next(){
+	
+	console.log("Next has Fired");
+	
+	$("#result").animate({
+		
+		"max-height":"0",
+		"width":"100%",
+		
+	});
+		
+	
+	if(chapter_number !== 5){
+		
+		chapter_number++;
+		draw();
+		
+	}else{
+		
+		chapter_number = 0;
+		draw();
+		
+	}
+	
+	$("#result").animate("max-height","0px");
+	
+}
 
 /**
  *	
@@ -22,11 +100,13 @@ function check_input(){
 	
 	answer = editor.getValue();
 	
+	console.log(chapter_number);
+	
 	passed = false;
 	
-	$.each(data.chapters[0].answers, function(index, value) {
+	$.each(data.chapters[chapter_number].answers, function(index, value) {
     
-    	if(answer.search(value) != -1){
+    	if(answer.indexOf(value) > -1){
 	    	
 	    	passed = true;
 	    	
@@ -48,7 +128,11 @@ function check_input(){
 			
 		});
 		
+		attempts++;
+		
 		setTimeout(function() { hide_result(); }, 5000);
+		
+		console.log("Attempt #" + attempts); 
 		
 	}else{
 		
@@ -63,74 +147,11 @@ function check_input(){
 			
 		});
 		
-		change_btn();
+		attempts = 0;
+		
+		setTimeout(function() { next(); }, 5000);
 		
 	}
-	
-}
-
-function change_btn(){
-	
-	$(".chapter_nav").toggleClass("shake");
-	
-}
-
-/**
- *	
- * 
- */		
-
-function draw(){
-	
-	hide_result();
-	
-	editor.setValue(data.chapters[chapter_number].question);
-	$("#chapter_content").text(data.chapters[chapter_number].desc);
-	$(".chapter h3").text(data.chapters[chapter_number].title);
-	$(".CodeMirror").animate({"opacity":"1"},500);
-	
-	
-}
-
-function hide_result(){
-	
-	$("#result").animate({"height":"0px"}, function(){
-		
-		$("#result").css("display","none");
-		
-	});
-	
-}
-
-/**
- *	
- * 
- */		
-
-function next(){
-	
-	
-		$("#result").animate({
-			
-			"max-height":"0",
-			"width":"100%",
-			
-		});
-		
-	
-	if(chapter_number != 6){
-		
-		chapter_number++;
-		draw();
-		
-	}else{
-		
-		chapter_number = 0;
-		draw();
-		
-	}
-	
-	$("#result").animate("max-height","0px");
 	
 }
 
@@ -162,67 +183,71 @@ function get_system_data(){
 		
 	}
 
+function init(){
+	
+	
+	console.warn("Hello");
+	$('.page_1 .inner h1').toggle().addClass('animated bounceInDown');
+	$(".page_1 .inner a.btn").toggle().addClass('animated bounceInUp');
+	
+}
+
+
 /**
  *	Init CodeMirror and Fetch App Data json
  * 
- */		
+ */	
+ 
+
+function change_page(page){
+	
+	switch(page){
+	
+		case "home":
+		
+			console.log("Home fired");
+		
+		break  	
+		
+	} 
+	
+}
 
 $(document).ready(function(){
 	
+	$("#menu_release").click(function(){
+		
+		console.log("Hello World");
+		
+		$("nav ol").slideToggle();
+		
+	});
 	
 	editor = CodeMirror.fromTextArea(document.getElementById("textarea"), {
 			lineNumbers: false,
 			mode: "text/x-scss"
 	});	
 	
-	$("#type").typed({
-        strings: ["$variables ","@imports", "@mixins", "_partials", "h1 { span { nesting } }"],
-        typeSpeed: 60,
-        loop: true,
-        backSpeed: 60,
-      });
-	
 	// Disable the CMD-S key default - Habbit of saving after editing code area :/
 	document.addEventListener("keydown", function(e) {
-	if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+	if (e.keyCode === 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
 	    e.preventDefault();
-	    
-	    console.log("[SCSS Is Awesome] Save Function Is Disabled for the mental health of James.");
 	    
 	  }
 	}, false);
 	
-	editor.on("focus", function(){
-		
-		hide_result();
-		
-	});
+	editor.on("focus", function(){ hide_result();	});
 	
 	get_system_data();
 	
-	$("#submit").click(function(){
-		
-		check_input();
-		
-	});
-
-	$("a#START").click(function(){
-		
-		$(".filler h2, .filler a").toggleClass("fadeOutDown");
-		$(".filler").delay().fadeToggle(1000);
-		
-	});
+	$("#submit").click(function(){	check_input(); 	});
 	
-	$("#next").click(function(){
-		
-		next();
-		
-	});
+	$("#next").click(function(){	next();			});
 	
 	$("#reset").click(function(){
 		
 		
-		$(".CodeMirror").animate({"opacity":"0"}, 1000, function(){
+		$(".CodeMirror").animate({"opacity":"0"}, 500, function(){
 			
 			draw();
 			
@@ -230,6 +255,16 @@ $(document).ready(function(){
 
 		
 	});
+	
+	$("#credits").click(function(){
+		
+		console.log("fired");
+		
+		$(".credits_box").addClass('animated bounceOutLeft');
+		
+	});
+	
+	change_page(home);
 	
 });
 
