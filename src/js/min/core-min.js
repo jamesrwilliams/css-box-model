@@ -100,11 +100,13 @@ function check_input(){
 	
 	answer = editor.getValue();
 	
-	console.log(chapter_number);
+	console.log(answer);
 	
 	passed = false;
 	
 	$.each(data.chapters[chapter_number].answers, function(index, value) {
+    
+    	console.log(data.chapters[chapter_number].answers[index]);
     
     	if(answer.indexOf(value) > -1){
 	    	
@@ -181,6 +183,9 @@ function get_system_data(){
 			}    
 		});	
 		
+		
+		console.warn("[SCSS Rocks] Only two levels of the tutorial are currently working");
+		
 	}
 
 function init(){
@@ -200,8 +205,6 @@ function init(){
 $(document).ready(function(){
 	
 	$("#menu_release").click(function(){
-		
-		console.log("Hello World");
 		
 		$("nav ol").slideToggle();
 		
@@ -239,16 +242,6 @@ $(document).ready(function(){
 
 		
 	});
-	
-	$("#credits").click(function(){
-		
-		console.log("fired");
-		
-		$(".credits_box").addClass('animated bounceOutLeft');
-		
-	});
-	
-	change_page(home);
 	
 });
 
