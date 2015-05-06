@@ -1,0 +1,64 @@
+span.code,
+.codeMirror {
+	
+	font-family: "source-code-pro", "Consolas", monospace;
+	
+}
+
+.CodeMirror {
+	
+
+	padding: 20px;
+	
+}
+
+.CodeMirror-gutter {
+	
+	
+	text-align: center;
+	background: $colour_Background;
+	
+}
+
+#result {
+	
+	margin: 0;
+	padding: 0;
+	background: green;
+	
+	color: white;
+	font-weight: bold;
+	
+	text-align: center;
+	line-height: 60px;
+	
+	z-index: 10000000;
+	
+	display: none;
+	width: 0;
+	height: 0;
+	
+}
+
+.chapter {
+
+	margin-top: 5vh;
+	line-height: 1.3em;
+	color: white;
+
+	h3 {
+			
+		font-size: 5vh;
+		margin: 0;
+		
+	}
+	
+	p {
+		
+		margin: 3vh 0;
+		
+	}
+	
+	
+	
+}
